@@ -1,0 +1,49 @@
+.container {
+  min-height: 800px;
+}
+.hero-container {
+  height: 1080px;
+
+  .hero-image {
+    background-image: url('/assets/imgs/hero-banner.png');
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    .hero-quote {
+      position: absolute;
+      text-align: center;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      border: 1px solid;
+      padding: 10px;
+      h5 {
+        font-weight: 300;
+        font-size: 32px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+// Media Queries
+@media (max-width: 600px) {
+  .hero-container[_ngcontent-c2]
+  .hero-image[_ngcontent-c2]
+  .hero-quote[_ngcontent-c2] {
+    width: 300px;
+  }
+  .hero-container[_ngcontent-c2]
+  .hero-image[_ngcontent-c2]
+  .hero-quote[_ngcontent-c2]
+  h5[_ngcontent-c2] {
+    font-size: 24px;
+  }
+}
+
+
