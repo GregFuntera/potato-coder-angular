@@ -1,9 +1,8 @@
 .container {
   min-height: 800px;
 }
-.hero-container {
-  height: 1080px;
 
+.hero-container {
   .hero-image {
     background-image: url('/assets/imgs/hero-banner.png');
     height: 50%;
@@ -24,15 +23,64 @@
       h5 {
         font-weight: 300;
         font-size: 32px;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 50px;
+        margin-right: 50px;
       }
+    }
+  }
+}
+
+.blog-section {
+  margin-left: 50px;
+}
+
+.blog-card {
+  max-width: 350px;
+  background: #271919;
+}
+
+.mat-card>.mat-card-actions:last-child#blog {
+  margin-bottom: 25px !important;
+  padding-bottom: 0;
+}
+
+#blog .mat-card-actions {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 8px 0;
+}
+
+#read-more-btn {
+  float: right;
+}
+
+.profile-card {
+  width: 400px;
+  height: 300px;
+  margin: 20px;
+  .profile-initial {
+    height: 150px;
+    color: #000000;
+    text-align: center;
+    width: 100%;
+    span {
+      line-height: 150px;
+      font-size: 72px;
+      border: 1px solid;
+      border-radius: 50%;
+      padding: 5px 20px 5px 20px;
+      background: #281919;
+      color: #fff;
+      border-color: #281919;
     }
   }
 }
 
 // Media Queries
 @media (max-width: 600px) {
+  .blog-section {
+    margin-left: 0px;
+  }
   .hero-container[_ngcontent-c2]
   .hero-image[_ngcontent-c2]
   .hero-quote[_ngcontent-c2] {
@@ -43,6 +91,8 @@
   .hero-quote[_ngcontent-c2]
   h5[_ngcontent-c2] {
     font-size: 24px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
