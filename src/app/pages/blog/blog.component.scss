@@ -1,3 +1,7 @@
+@import '~@angular/material/theming';
+// Import your custom theme
+@import 'src/styles.scss';
+
 .container {
   min-height: 800px;
 }
@@ -28,6 +32,23 @@
       }
     }
   }
+
+  .hero-button {
+    position: absolute;
+    width: 100%;
+    top: 60%;
+    h5 {
+      font-size: 18px;
+      color: #fff !important;
+      font-weight: 100;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    text-align: center;
+    button {
+      background: mat-color($custom-primary, 600);
+    }
+  }
 }
 
 .blog-section {
@@ -55,6 +76,7 @@
 }
 
 .profile-card {
+  background: #232222 !important;
   width: 400px;
   height: 300px;
   margin: 20px;
@@ -73,6 +95,66 @@
       color: #fff;
       border-color: #281919;
     }
+  }
+}
+.message-container {
+  border-radius: 7px;
+}
+
+
+.icons-container {
+  border-radius: 7px;
+  margin: 10px;
+  height: 25px;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+
+  li {
+    float: left;
+    mat-icon {
+      margin: 3px;
+    }
+  }
+}
+
+.archive-card {
+  background: #232222 !important;
+  width: 400px;
+  height: 100%;
+  margin: 20px;
+}
+
+
+.expansion-date-title:hover {
+  color: mat-color($blog-primary);
+}
+.expansion-date-icon {
+  margin: 5px;
+  position: absolute;
+  line-height: 0.9em;
+}
+
+.archive-expansion {
+  a {
+    color: black;
+  }
+}
+
+mat-list-item {
+  background: white;
+  margin-top: 5px;
+  border-radius: 7px;
+}
+
+mat-list-item:hover {
+  background: mat-color($blog-primary);
+  cursor: pointer;
+  a {
+    color: white;
   }
 }
 
@@ -96,4 +178,17 @@
   }
 }
 
+@media (max-width: 1100px) {
+  .hero-container[_ngcontent-c2]
+  .hero-button[_ngcontent-c2] {
+    top: 70%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero-container[_ngcontent-c2]
+  .hero-button[_ngcontent-c2] {
+    display: none;
+  }
+}
 

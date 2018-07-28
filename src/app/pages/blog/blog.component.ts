@@ -62,4 +62,8 @@ export class BlogComponent implements OnInit {
     };
   }
 
+  scrollTo(target) {
+    target.scrollIntoView({behavior: 'smooth'});
+  }
+
 }

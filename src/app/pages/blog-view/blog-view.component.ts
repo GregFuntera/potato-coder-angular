@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogViewComponent implements OnInit {
 
+  panelOpenState = true;
+
   constructor() { }
 
   ngOnInit() {

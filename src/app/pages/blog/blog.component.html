@@ -17,9 +17,15 @@
           - John Wooden
         </p>
       </div>
+      <div class="hero-button">
+        <h5>Explore</h5>
+        <button mat-flat-button (click)="scrollTo(blog)">
+          <mat-icon>expand_more</mat-icon>
+        </button>
+      </div>
     </div>
     <!-- Main Container-->
-    <div class="blogs-container">
+    <div #blog class="blogs-container">
       <div class="content"
           fxLayout="row"
           fxLayout.xs="column"
@@ -111,28 +117,64 @@
         <!-- Archive Section -->
         <div class="archive-section m-t-3" fxFlex="30" fxFlex.xs="100">
           <div fxLayout="row">
-            <mat-card class="profile-card bg-white" fxLayout="column" fxFlex="100" fxFlex.xs="100">
+            <mat-card class="profile-card" fxLayout="column" fxFlex="100" fxFlex.xs="100">
               <div class="profile-initial">
                 <span>G</span>
               </div>
               <mat-card-content>
-
+                <div class="message-container text-center bg-black pad-3">
+                  <p class="font-16">
+                    <i>
+                      "Sharing my learning journey"
+                    </i>
+                  </p>
+                </div>
+                <div class="icons-container bg-black text-center pad-5">
+                  <ul>
+                    <li>
+                        <mat-icon>code</mat-icon>
+                    </li>
+                    <li>
+                        <mat-icon>code</mat-icon>
+                    </li>
+                    <li>
+                        <mat-icon>code</mat-icon>
+                    </li>
+                  </ul>
+                </div>
               </mat-card-content>
             </mat-card>
           </div>
           <div fxLayout="row">
-            <mat-card class="profile-card bg-white" fxLayout="row" fxLayout="column" fxFlex="100" fxFlex.xs="100">
-                <div class="profile-initial">
-                  <span>G</span>
-                </div>
-                <mat-card-content>
-                </mat-card-content>
-              </mat-card>
+            <mat-card class="archive-card" fxLayout="row" fxLayout="column" fxFlex="100" fxFlex.xs="100">
+             <mat-card-title>Archives</mat-card-title>
+              <!-- Expansion Panel -->
+              <mat-accordion class="m-t-5">
+                  <mat-expansion-panel class="archive-expansion" [expanded]=true hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        <!-- Blog Dates -->
+                        <h5 class="expansion-date-title">
+                          <span class="font-24">2018</span>
+                          <mat-icon class="expansion-date-icon">date_range</mat-icon>
+                        </h5>
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <!-- Blog Titles -->
+                    <mat-list role="list">
+                      <mat-list-item>
+                        <a class="font-14" href="#">Title 1</a>
+                      </mat-list-item>
+                      <mat-list-item>
+                          <a class="font-14" href="#">Title 2</a>
+                      </mat-list-item>
+                    </mat-list>
+                  </mat-expansion-panel>
+                </mat-accordion>
+            </mat-card>
           </div>
         </div>
     </div>
-
   </div>
-
 </div>
 

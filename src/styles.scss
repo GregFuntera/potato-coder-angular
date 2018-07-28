@@ -169,7 +169,40 @@ h1, h2, h3, h4 {
 .m-t-10 {
   margin-top: 10px !important;
 }
+
+// Padding
+.pad-3 {
+  padding: 3px !important;
+}
+
+.pad-5 {
+  padding: 5px !important;
+}
+
+// Text Alignments
+.text-center {
+  text-align: center !important;
+}
+
+// Font size
+.font-14 {
+  font-size: 14px !important;
+}
+
+.font-16 {
+  font-size: 16px !important;
+}
+
+.font-24 {
+  font-size: 24px !important;
+}
+
+
 // Background Colors
 .bg-white {
   background: #ffffff !important;
+}
+
+.bg-black {
+  background: #000000 !important;
 }
