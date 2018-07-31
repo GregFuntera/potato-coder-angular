@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { OverlayModule } from '@angular/cdk/overlay';
 import {
   MatInputModule,
   MatButtonModule,
@@ -21,7 +22,8 @@ import {
     MatIconModule,
     MatExpansionModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    OverlayModule
   ],
   exports: [
     MatInputModule,
@@ -32,7 +34,8 @@ import {
     MatIconModule,
     MatExpansionModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    OverlayModule
   ]
 })
 export class AppMaterialModule { }
