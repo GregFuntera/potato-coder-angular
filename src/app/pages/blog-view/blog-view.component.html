@@ -1,22 +1,12 @@
 <div class="container">
   <mat-card class="blog-view-card">
     <mat-card-content>
-      <mat-grid-list [cols]="breakpoint" (window:resize)="onGridResize($event)">
-        <mat-grid-tile [colspan]="gridColSpan" (window:resize)="onGridResize($event)">
-          <div class="article-container">
-            <h1>Deploy Angular 6 Project To Live Using Heroku</h1>
-            <h3>Jul. 13, 2018</h3>
-            <div class="article">
-              <p class="font-18">Easily deploy your angular project using heroku. Creating your heroku account and deploying your project through CLI. Adding scripts in package.json to build and deploy your project in heroku.</p>
-            </div>
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="gridColSpan" (window:resize)="onGridResize($event)">
-          <div class="article-image" style="background: url(https://i.imgur.com/z2Fuw94.png) center/cover;"></div>
-        </mat-grid-tile>
-      </mat-grid-list>
       <div class="content-container">
         <mat-card class="card-content m-t-5">
+          <div class="article-title">
+             <h1>Deploy Angular 6 Project To Live Using Heroku</h1>
+             <h2>Jul. 13, 2018</h2>
+          </div>
           <mat-card-content>
             <div #blogContent class="content" [innerHTML]="blogArticle"></div>
           </mat-card-content>
