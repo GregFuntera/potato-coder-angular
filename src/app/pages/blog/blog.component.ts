@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-blog',
@@ -14,21 +15,18 @@ export class BlogComponent implements OnInit {
   height: number = 50;
   // Responsive Grid
   breakpoint: number;
+  isDisplayHero: boolean = true;
 
-  constructor() { }
+  constructor(
+    public breakpointObserver: BreakpointObserver
+  ) { }
 
   ngOnInit() {
     // Particle JS
     this.particleSetup();
+    // Breakpoints
     this.gridBreakpoint();
-  }
-
-  gridBreakpoint() {
-    this.breakpoint = (window.innerWidth <= 700) ? 1 : 2;
-  }
-
-  onGridResize(event) {
-    this.breakpoint = (event.target.innerWidth <= 700) ? 1 : 2;
+    this.heroImageBreakpoint();
   }
 
   particleSetup () {
@@ -60,6 +58,27 @@ export class BlogComponent implements OnInit {
         },
       }
     };
+  }
+
+  gridBreakpoint() {
+    this.breakpoint = (window.innerWidth <= 700) ? 1 : 2;
+  }
+
+  onGridResize(event) {
+    this.breakpoint = (event.target.innerWidth <= 700) ? 1 : 2;
+  }
+
+  heroImageBreakpoint() {
+    this.breakpointObserver
+      .observe(['(max-width: 530px)'])
+      .subscribe(
+          res => {
+            if (res.matches) {
+              this.isDisplayHero = false;
+            } else {
+              this.isDisplayHero = true;
+            }
+      });
   }
 
   scrollTo(target) {

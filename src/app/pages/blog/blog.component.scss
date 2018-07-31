@@ -159,6 +159,18 @@ mat-list-item:hover {
 }
 
 // Media Queries
+@media (max-width: 850px) {
+  .hero-image {
+    margin-top: 60px !important;
+  }
+}
+@media (max-width: 530px) {
+  .blogs-container {
+    margin-top: 60px !important;
+  }
+}
+
+
 @media (max-width: 600px) {
   .blog-section {
     margin-left: 0px;

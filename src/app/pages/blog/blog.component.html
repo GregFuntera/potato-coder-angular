@@ -1,7 +1,7 @@
 <div class="container">
   <!-- Hero Banner -->
   <div class="hero-container">
-    <div class="hero-image">
+    <div class="hero-image" *ngIf="isDisplayHero">
       <particles class="particle"
                 [params]="myParams"
                 [style]="myStyle"
@@ -32,26 +32,24 @@
           fxFlexFill>
         <!-- Blog Section -->
         <div class="blog-section" fxFlex="60" fxFlex.xs="100">
-          <mat-grid-list  class="m-20"
+          <mat-grid-list  class="m-0"
                           [cols]="breakpoint"
                           (window:resize)="onGridResize($event)"
                           rowHeight="500px"
                           gutterSize="10px">
             <mat-grid-tile>
               <mat-card class="blog-card">
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <mat-card-title>
-                  My Angular Title here...
-                </mat-card-title>
+                <img mat-card-image src="https://i.imgur.com/z2Fuw94.png" alt="Photo of a Shiba Inu">
                 <mat-card-content>
-                  <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
+                  <p text-center>
+                    Easily deploy your angular project using heroku. Creating your heroku account and deploying your project through CLI. Adding scripts in package.json to build and deploy your project in heroku.
                   </p>
                 </mat-card-content>
                 <mat-card-actions id="blog">
-                  <button id="read-more-btn" mat-raised-button color="primary">Read More</button>
+                  <button id="read-more-btn"
+                          mat-raised-button
+                          color="primary"
+                          [routerLink]="['/blog/123']">Read More</button>
                 </mat-card-actions>
               </mat-card>
             </mat-grid-tile>
@@ -162,11 +160,11 @@
                     </mat-expansion-panel-header>
                     <!-- Blog Titles -->
                     <mat-list role="list">
-                      <mat-list-item>
-                        <a class="font-14" href="#">Title 1</a>
+                      <mat-list-item [routerLink]="['/blog/123']">
+                        <a class="font-14">Deploy Your NodeJS Project Using Heroku</a>
                       </mat-list-item>
                       <mat-list-item>
-                          <a class="font-14" href="#">Title 2</a>
+                          <a class="font-14">Title 2</a>
                       </mat-list-item>
                     </mat-list>
                   </mat-expansion-panel>
