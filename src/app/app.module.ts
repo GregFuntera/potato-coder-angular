@@ -5,6 +5,7 @@ import { AppMaterialModule } from './app-material/app-material.module';
 import { ParticlesModule } from 'angular-particle';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppRoutingModule } from './/app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 // Pages/Components
 import { AppComponent } from './app.component';
@@ -14,6 +15,11 @@ import { ImagePopupComponent } from './pages/blog-view/components/image-popup/im
 
 // Services
 import { ImagePopupService } from './services/image-popup/image-popup.service';
+import { BlogService } from './services/blog/blog.service';
+import { MessageService } from './services/message/message.service';
+import { MessageHandlerComponent } from './components/message-handler/message-handler.component';
+// Pipes
+import { InnerHtmlPipe } from './pipes/inner-html/inner-html.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +27,8 @@ import { ImagePopupService } from './services/image-popup/image-popup.service';
     BlogComponent,
     BlogViewComponent,
     ImagePopupComponent,
+    MessageHandlerComponent,
+    InnerHtmlPipe,
   ],
   imports: [
     BrowserModule,
@@ -28,13 +36,16 @@ import { ImagePopupService } from './services/image-popup/image-popup.service';
     BrowserAnimationsModule,
     AppMaterialModule,
     ParticlesModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   entryComponents: [
     ImagePopupComponent
   ],
   providers: [
-    ImagePopupService
+    ImagePopupService,
+    BlogService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

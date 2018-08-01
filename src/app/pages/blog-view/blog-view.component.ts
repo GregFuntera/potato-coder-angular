@@ -15,13 +15,13 @@ import {
   ViewChild,
   ElementRef,
 } from '@angular/core';
-
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
-import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 // Components
 import { ImagePopupComponent } from './components/image-popup/image-popup.component';
 // Services
 import { ImagePopupService } from '../../services/image-popup/image-popup.service';
+import { BlogService } from './../../services/blog/blog.service';
 // Mockups
 import { MOCK } from '../../mocks/mock-blog-view.mock';
 // Models
@@ -39,45 +39,55 @@ export class BlogViewComponent implements OnInit, AfterViewInit {
   breakpoint: number;
   gridColSpan: number;
   blogArticle: any;
+  blog$: any;
 
   constructor(
-    public sanitizer: DomSanitizer,
-    public overlay: Overlay,
-    public imgPopupSvc: ImagePopupService,
+    private route: ActivatedRoute,
+    private overlay: Overlay,
+    private imgPopupSvc: ImagePopupService,
+    private blogSvc: BlogService,
   ) { }
 
   ngAfterViewInit() {
-     // Image Pop-up Modals
-     this.loadImages();
+    // Image Pop-up Modals
+    /**
+     * TODO:
+     * Add Image zoom-in
+    */
+    //  this.loadImages();
   }
 
   ngOnInit() {
-    // console.log(MOCK.body);
-    this.blogArticle = this.sanitizer.bypassSecurityTrustHtml(MOCK.body);
+    let blogID = this.route.snapshot.paramMap.get('blogid');
+    this.loadBlog(blogID);
+    //
     this.gridBreakpoint();
+  }
 
+  loadBlog(blogID) {
+    this.blogSvc.getBlog(blogID).subscribe(
+      res => {
+        this.blog$ = res;
+        // console.log('Blog article: ', this.blog$);
+      });
   }
 
   gridBreakpoint() {
     this.breakpoint = (window.innerWidth <= 700) ? 1 : 4;
     this.gridColSpan = (this.breakpoint === 1) ? 1 : 2;
-    console.log('cols: '+ this.breakpoint, 'colspan: ' + this.gridColSpan);
+    // console.log('cols: '+ this.breakpoint, 'colspan: ' + this.gridColSpan);
   }
 
   onGridResize(event) {
     this.breakpoint = (event.target.innerWidth <= 700) ? 1 : 4;
     this.gridColSpan = (this.breakpoint === 1) ? 1 : 2;
-    console.log('cols: '+ this.breakpoint, 'colspan: ' + this.gridColSpan);
+    // console.log('cols: '+ this.breakpoint, 'colspan: ' + this.gridColSpan);
   }
 
   loadImages() {
     const documentRef = this.blogContent.nativeElement;
     let imgs = documentRef.getElementsByTagName('img');
-    /**
-     * TODO:
-     * Add Image zoom-in
-     */
-    //this.onClickImage(imgs);
+    this.onClickImage(imgs);
   }
 
   onClickImage(imgs) {

@@ -124,6 +124,8 @@ $blog-theme:   mat-dark-theme($blog-primary, $dark-accent, $dark-warn);
 }
 
 @include mat-button-theme($blog-theme);
+@include mat-progress-spinner-theme($blog-theme);
+@include mat-progress-bar-theme($blog-theme);
 
 body {
   margin: 0 !important;

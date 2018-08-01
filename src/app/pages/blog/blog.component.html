@@ -32,84 +32,37 @@
           fxFlexFill>
         <!-- Blog Section -->
         <div class="blog-section" fxFlex="60" fxFlex.xs="100">
-          <mat-grid-list  class="m-0"
+          <mat-grid-list  class="m-0 m-10"
                           [cols]="breakpoint"
                           (window:resize)="onGridResize($event)"
                           rowHeight="500px"
                           gutterSize="10px">
-            <mat-grid-tile>
-              <mat-card class="blog-card">
-                <img mat-card-image src="https://i.imgur.com/z2Fuw94.png" alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                  <p text-center>
-                    Easily deploy your angular project using heroku. Creating your heroku account and deploying your project through CLI. Adding scripts in package.json to build and deploy your project in heroku.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions id="blog">
-                  <button id="read-more-btn"
-                          mat-raised-button
-                          color="primary"
-                          [routerLink]="['/blog/123']">Read More</button>
-                </mat-card-actions>
-              </mat-card>
-            </mat-grid-tile>
-
-            <mat-grid-tile>
-              <mat-card class="blog-card">
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <mat-card-title>
-                  My Angular Title here...
-                </mat-card-title>
-                <mat-card-content>
-                  <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions id="blog">
-                  <button id="read-more-btn" mat-raised-button color="primary">Read More</button>
-                </mat-card-actions>
-              </mat-card>
-            </mat-grid-tile>
-
-            <mat-grid-tile>
-              <mat-card class="blog-card">
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <mat-card-title>
-                  My Angular Title here...
-                </mat-card-title>
-                <mat-card-content>
-                  <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions id="blog">
-                  <button id="read-more-btn" mat-raised-button color="primary">Read More</button>
-                </mat-card-actions>
+            <!-- Message Handlers -->
+            <!-- <app-message-handler></app-message-handler> -->
+            <!-- Blog Loader -->
+            <div *ngIf="!blogs else showBlogs" class="loader">
+              <mat-spinner></mat-spinner>
+              <span>Getting ready...</span>
+            </div>
+            <!-- Show Blog -->
+            <ng-template #showBlogs>
+              <mat-grid-tile *ngFor="let blog of blogs">
+                <mat-card class="blog-card">
+                  <img mat-card-image src="{{ blog.featured_photo }}" alt="{{ blog.title }}">
+                  <mat-card-content>
+                    <p text-center>
+                      {{ blog.summary }}
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions id="blog">
+                    <button id="read-more-btn"
+                            mat-raised-button
+                            color="primary"
+                            [routerLink]="['/blog', blog._id]">Read More</button>
+                  </mat-card-actions>
                 </mat-card>
-            </mat-grid-tile>
-
-            <mat-grid-tile>
-              <mat-card class="blog-card">
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <mat-card-title>
-                  My Angular Title here...
-                </mat-card-title>
-                <mat-card-content>
-                  <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions id="blog">
-                  <button id="read-more-btn" mat-raised-button color="primary">Read More</button>
-                </mat-card-actions>
-                </mat-card>
-            </mat-grid-tile>
+              </mat-grid-tile>
+            </ng-template>
           </mat-grid-list>
         </div>
         <!-- Archive Section -->
@@ -148,27 +101,29 @@
              <mat-card-title>Archives</mat-card-title>
               <!-- Expansion Panel -->
               <mat-accordion class="m-t-5">
-                  <mat-expansion-panel class="archive-expansion" [expanded]=true hideToggle>
+                <div *ngIf="!archives else showArchives">
+                  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                </div>
+                <ng-template #showArchives>
+                  <mat-expansion-panel class="archive-expansion" [expanded]=true hideToggle *ngFor="let archive of archives">
                     <mat-expansion-panel-header>
                       <mat-panel-title>
                         <!-- Blog Dates -->
                         <h5 class="expansion-date-title">
-                          <span class="font-24">2018</span>
+                          <span class="font-24">{{ archive._id }}</span>
                           <mat-icon class="expansion-date-icon">date_range</mat-icon>
                         </h5>
                       </mat-panel-title>
                     </mat-expansion-panel-header>
                     <!-- Blog Titles -->
-                    <mat-list role="list">
-                      <mat-list-item [routerLink]="['/blog/123']">
-                        <a class="font-14">Deploy Your NodeJS Project Using Heroku</a>
-                      </mat-list-item>
-                      <mat-list-item>
-                          <a class="font-14">Title 2</a>
+                    <mat-list role="list" *ngFor="let blog of archive.blogs">
+                      <mat-list-item [routerLink]="['/blog', blog._id]">
+                        <a class="font-14">{{ blog.title }}</a>
                       </mat-list-item>
                     </mat-list>
                   </mat-expansion-panel>
-                </mat-accordion>
+                </ng-template>
+              </mat-accordion>
             </mat-card>
           </div>
         </div>

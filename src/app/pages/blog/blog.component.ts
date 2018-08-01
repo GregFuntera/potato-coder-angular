@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { BlogService } from './../../services/blog/blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -15,10 +16,15 @@ export class BlogComponent implements OnInit {
   height: number = 50;
   // Responsive Grid
   breakpoint: number;
-  isDisplayHero: boolean = true;
+  isDisplayHero = true;
+  //
+  blogs: any[] = [];
+  archives: any[] = [];
+  message: any;
 
   constructor(
-    public breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private blogSvc: BlogService,
   ) { }
 
   ngOnInit() {
@@ -27,6 +33,23 @@ export class BlogComponent implements OnInit {
     // Breakpoints
     this.gridBreakpoint();
     this.heroImageBreakpoint();
+    //
+    this.loadBlogs();
+    this.loadArchives();
+  }
+
+  loadBlogs() {
+    this.blogSvc.getBlogs().subscribe(
+      res => {
+        this.blogs = res;
+    });
+  }
+
+  loadArchives() {
+    this.blogSvc.getBlogArchives().subscribe(
+      res => {
+        this.archives = res;
+      });
   }
 
   particleSetup () {
