@@ -12,7 +12,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 - Added API for prod and local
-- Added pipe for sanitizing innerHTML
+- Added pipe for sanitizing innerHTML 
+- Installed github pages for deployment
 
 ## [1.0.0] - 2018-07-31
 ### Changed 
