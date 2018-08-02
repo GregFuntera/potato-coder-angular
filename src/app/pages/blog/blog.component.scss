@@ -1,9 +1,10 @@
 @import '~@angular/material/theming';
 // Import your custom theme
 @import 'src/styles.scss';
-
 .container {
   min-height: 800px;
+  margin-top: 80px !important;
+  margin-bottom: 0px !important;
 }
 
 .hero-container {
@@ -95,25 +96,19 @@
 }
 
 .profile-card {
-  background: #232222 !important;
   width: 400px;
-  height: 300px;
+  height: 350px;
   margin: 20px;
-  .profile-initial {
-    height: 150px;
-    color: #000000;
-    text-align: center;
-    width: 100%;
-    span {
-      line-height: 150px;
-      font-size: 72px;
-      border: 1px solid;
-      border-radius: 50%;
-      padding: 5px 20px 5px 20px;
-      background: #281919;
-      color: #fff;
-      border-color: #281919;
-    }
+  .profile-card-header-image {
+      background-image: url('/assets/imgs/potato-coder-logo.png');
+      background-size: cover;
+  }
+  .subscribe-btn {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    right: 0;
+    margin-right: 10px;
   }
 }
 .message-container {
@@ -178,17 +173,43 @@ mat-list-item:hover {
 }
 
 // Media Queries
-@media (max-width: 850px) {
-  .hero-image {
-    margin-top: 60px !important;
+@media (min-width: 360px) {
+  .profile-card {
+    width: 400px;
+    height: 320px;
+    margin: 20px;
   }
 }
+
+@media (min-width: 410px) {
+  .profile-card {
+    width: 400px;
+    height: 370px;
+    margin: 20px;
+  }
+}
+
+@media (min-width: 500px) {
+  .profile-card {
+    width: 400px;
+    height: 400px;
+    margin: 20px;
+  }
+}
+
+@media (min-width: 600px) {
+  .profile-card {
+    width: 400px;
+    height: 350px;
+    margin: 20px;
+  }
+}
+
 @media (max-width: 530px) {
   .blogs-container {
     margin-top: 60px !important;
   }
 }
-
 
 @media (max-width: 600px) {
   .blog-section {
@@ -206,6 +227,12 @@ mat-list-item:hover {
     font-size: 24px;
     margin-left: 20px;
     margin-right: 20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .hero-image {
+    margin-top: 60px !important;
   }
 }
 

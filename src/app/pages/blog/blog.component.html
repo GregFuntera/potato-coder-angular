@@ -69,31 +69,18 @@
         <div class="archive-section m-t-3" fxFlex="30" fxFlex.xs="100">
           <div fxLayout="row">
             <mat-card class="profile-card" fxLayout="column" fxFlex="100" fxFlex.xs="100">
-              <div class="profile-initial">
-                <span>G</span>
-              </div>
-              <mat-card-content>
-                <div class="message-container text-center bg-black pad-3">
-                  <p class="font-16">
-                    <i>
-                      "Sharing my learning journey"
-                    </i>
-                  </p>
-                </div>
-                <div class="icons-container bg-black text-center pad-5">
-                  <ul>
-                    <li>
-                        <mat-icon>code</mat-icon>
-                    </li>
-                    <li>
-                        <mat-icon>code</mat-icon>
-                    </li>
-                    <li>
-                        <mat-icon>code</mat-icon>
-                    </li>
-                  </ul>
-                </div>
-              </mat-card-content>
+              <mat-card-header>
+                <div mat-card-avatar class="profile-card-header-image"></div>
+                <mat-card-title>potato coder</mat-card-title>
+                <mat-card-subtitle>Youtube Channel</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image src="/assets/imgs/youtube-banner.png" alt="Youtube">
+              <mat-card-actions>
+                <button class="subscribe-btn" color="warn" mat-raised-button (click)="onSubscribe()">
+                  <mat-icon>subscriptions</mat-icon>
+                  Subscribe
+                </button>
+              </mat-card-actions>
             </mat-card>
           </div>
           <div fxLayout="row">
@@ -130,4 +117,3 @@
     </div>
   </div>
 </div>
-

@@ -108,4 +108,8 @@ export class BlogComponent implements OnInit {
     target.scrollIntoView({behavior: 'smooth'});
   }
 
+  onSubscribe() {
+    window.open('https://www.youtube.com/channel/UCS7eZBsjkUDXWbYGyAS7OgA/videos');
+  }
+
 }

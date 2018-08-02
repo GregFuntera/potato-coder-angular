@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'http://potatocoder.herokuapp.com/api'
+  api: 'https://potatocoder.herokuapp.com/api'
 };
