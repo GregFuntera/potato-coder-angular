@@ -1,220 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
-// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
-@import '~@angular/material/theming';
-@include mat-core();
-
-$custom-primary: (
-    50 : #e0e0e0,
-    100 : #b3b3b3,
-    200 : #808080,
-    300 : #4d4d4d,
-    400 : #262626,
-    500 : #000000,
-    600 : #000000,
-    700 : #000000,
-    800 : #000000,
-    900 : #000000,
-    A100 : #a6a6a6,
-    A200 : #8c8c8c,
-    A400 : #737373,
-    A700 : #666666,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #ffffff,
-        400 : #ffffff,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #ffffff,
-        A700 : #ffffff,
-    )
-);
-
-$custom-secondary: (
-    50 : #e3e2e2,
-    100 : #bab7b7,
-    200 : #8c8787,
-    300 : #5e5757,
-    400 : #3c3333,
-    500 : #190f0f,
-    600 : #160d0d,
-    700 : #120b0b,
-    800 : #0e0808,
-    900 : #080404,
-    A100 : #ff4e4e,
-    A200 : #ff1b1b,
-    A400 : #e70000,
-    A700 : #ce0000,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #ffffff,
-        400 : #ffffff,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #ffffff,
-        A400 : #ffffff,
-        A700 : #ffffff,
-    )
-);
-
-$blog-primary-color: (
-    50 : #eae4fa,
-    100 : #c9bcf3,
-    200 : #a68feb,
-    300 : #8262e2,
-    400 : #6741dc,
-    500 : #4c1fd6,
-    600 : #451bd1,
-    700 : #3c17cc,
-    800 : #3312c6,
-    900 : #240abc,
-    A100 : #eae7ff,
-    A200 : #bcb4ff,
-    A400 : #8f81ff,
-    A700 : #7868ff,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #ffffff,
-        400 : #ffffff,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #ffffff,
-    )
-);
-
-$primary: mat-palette($custom-primary);
-$accent:  mat-palette($custom-secondary);
-$warn:    mat-palette($mat-red, 500);
-
-$config: mat-typography-config();
-$theme: mat-dark-theme($primary, $accent, $warn);
-
-@include angular-material-theme($theme);
-
-// Alternate Theme
-$blog-primary: mat-palette($blog-primary-color);
-$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
-$dark-warn:    mat-palette($mat-deep-orange);
-$blog-theme:   mat-dark-theme($blog-primary, $dark-accent, $dark-warn);
-
-.blog-dark-theme {
-  @include angular-material-theme($blog-theme);
-}
-
-@include mat-button-theme($blog-theme);
-@include mat-progress-spinner-theme($blog-theme);
-@include mat-progress-bar-theme($blog-theme);
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 body {
-  margin: 0 !important;
-}
-
-body {
-  font-family: mat-font-family($config);
-  font-weight: normal;
-  background: #0c0a0a;
+  margin: 0;
 }
 
 h1, h2, h3, h4 {
   font-weight: normal;
 }
 
-
 // CSS UTILITIES
 // Margins
 .m-auto {
-  margin: auto !important;
+  margin: auto;
 }
 
 .m-10 {
-  margin: 10px !important;
+  margin: 10px;
 }
 
 .m-15 {
-  margin: 15px !important;
+  margin: 15px;
 }
 
 .m-20 {
-  margin: 20px !important;
+  margin: 20px;
 }
 
 .m-t-3 {
-  margin-top: 3px !important;
+  margin-top: 3px;
 }
 
 .m-t-5 {
-  margin-top: 5px !important;
+  margin-top: 5px;
 }
 
 .m-t-10 {
-  margin-top: 10px !important;
+  margin-top: 10px;
 }
 
 // Padding
 .pad-3 {
-  padding: 3px !important;
+  padding: 3px;
 }
 
 .pad-5 {
-  padding: 5px !important;
+  padding: 5px;
 }
 
 .pad-t-150 {
-  padding-top: 150px !important;
+  padding-top: 150px;
 }
 
 .pad-t-170 {
-  padding-top: 170px !important;
+  padding-top: 170px;
 }
 
 // Text Alignments
 .text-center {
-  text-align: center !important;
+  text-align: center;
 }
 
 // Font size
 .font-14 {
-  font-size: 14px !important;
+  font-size: 14px;
 }
 
 .font-16 {
-  font-size: 16px !important;
+  font-size: 16px;
 }
 
 .font-18 {
-  font-size: 18px !important;
+  font-size: 18px;
 }
 
 .font-24 {
-  font-size: 24px !important;
+  font-size: 24px;
 }
 
 // Background Colors
 .bg-white {
-  background: #ffffff !important;
+  background: #ffffff;
 }
 
 .bg-black {
-  background: #000000 !important;
+  background: #000000;
 }

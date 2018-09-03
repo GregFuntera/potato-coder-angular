@@ -1,27 +1,70 @@
+@import "../styles/blog-theme.scss";
+
 .container {
-  margin-top: 80px !important;
-  margin-bottom: 0px !important;
+  margin-top: 80px;
+  margin-bottom: 0px;
 }
 
 .blog-header {
-  height: 80px !important;
+  height: 80px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
-  width: 100% !important;
+  width: 100%;
+  background: $theme-bg-color;
 }
 
-.brand {
-  a {
-    text-decoration: none;
+.blog-footer {
+  background: $theme-bg-color;
+  height: 80px;
+  .made-by-container {
+    h4 {
+      color: $white;
+      font-size: 14px;
+      mat-icon {
+        @include icon-size(14px);
+        line-height: 1 !important;
+      }
+    }
+    h5 {
+      span {
+        font-size: 14px;
+      }
+      color: $white;
+     font-size: 12px;
+    }
   }
-  .brand-logo {
-    color: #00B7FF;
-    border: 3px solid;
-    font-weight: 300 !important;
-    padding: 10px;
+  .subscribe-youtube {
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    color: #fff;
+    a {
+      margin-top: 18px;
+      margin-right: 5px;
+      mat-icon {
+        @include icon-size(18px);
+        margin-bottom: 5px;
+      }
+    }
   }
+}
+
+.blog-logo {
+  margin: auto;
+  line-height: 1;
+}
+
+mat-icon {
+  @include icon-size(32px);
+  line-height: 1 !important;
+}
+
+.blog-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
 }
 
 

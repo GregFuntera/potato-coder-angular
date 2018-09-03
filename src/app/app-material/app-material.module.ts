@@ -11,7 +11,9 @@ import {
   MatDividerModule,
   MatListModule,
   MatProgressSpinnerModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatSidenavModule,
+  MatTooltipModule
 } from '@angular/material';
 
 @NgModule({
@@ -27,7 +29,9 @@ import {
     MatListModule,
     OverlayModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSidenavModule,
+    MatTooltipModule
   ],
   exports: [
     MatInputModule,
@@ -41,7 +45,9 @@ import {
     MatListModule,
     OverlayModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSidenavModule,
+    MatTooltipModule
   ]
 })
 export class AppMaterialModule { }

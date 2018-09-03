@@ -1,0 +1,14 @@
+@import '~@angular/material/theming';
+
+// Background White
+$white: #fff;
+
+// Gradient Color
+$theme-bg-color: linear-gradient(to right, #fc466b, #3f5efb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+
+// Icon Sizes
+@mixin icon-size($size) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+}

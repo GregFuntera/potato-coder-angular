@@ -1,21 +1,47 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
-  <mat-toolbar class="blog-header" color="primary">
-    <div class="brand">
-      <a routerLink="/blog">
-        <h5 class="brand-logo">Potato Coder</h5>
+  <!-- Blog Header -->
+  <mat-toolbar color="primary" class="blog-header">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a class="blog-logo" routerLink="/">
+      <img width="200px" src="./assets/imgs/blog-logo.png" />
+    </a>
+    <button mat-icon-button matTooltip="Coming Soon!" [matTooltipPosition]="'above'">
+      <mat-icon >face</mat-icon>
+    </button>
+  </mat-toolbar>
+  <!-- Blog SideNav -->
+  <mat-sidenav-container class="blog-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav
+                 [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches"
+                 fixedTopGap="56">
+      <mat-nav-list>
+        <a mat-list-item>Sample Here</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <!-- Blog Content -->
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+<footer>
+  <mat-toolbar class="blog-footer">
+    <div class="made-by-container">
+      <h4>Made with
+        <mat-icon>favorite</mat-icon>
+      </h4>
+      <h5><span>By</span> Greg 2018</h5>
+    </div>
+    <div class="subscribe-youtube">
+      <a target="_blank" href="https://www.youtube.com/channel/UCS7eZBsjkUDXWbYGyAS7OgA/videos" mat-stroked-button>
+        Subscribe on YouTube
+        <mat-icon>subscriptions</mat-icon>
       </a>
     </div>
   </mat-toolbar>
-  <router-outlet></router-outlet>
-</div>
-<footer class="container">
-  <mat-toolbar color="primary">
-    <p>&copy; Greg Funtera 2018</p>
-  </mat-toolbar>
 </footer>
-
-
-
-
-
