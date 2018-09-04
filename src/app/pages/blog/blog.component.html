@@ -1,29 +1,28 @@
 <div class="container">
   <!-- Hero Banner -->
-  <div class="hero-container">
-    <div class="hero-image" *ngIf="isDisplayHero">
-      <particles class="particle"
-                [params]="myParams"
-                [style]="myStyle"
-                [width]="width"
-                [height]="height"></particles>
-      <div class="hero-quote">
-        <h5>
+  <div class="hero-banner">
+    <div class="hero-background">
+      <div class="hero-message">
+          <div class="hero-quote mat-typography">
+            <h3>Welcome</h3>
+            <h4>to my learning journey</h4>
+            <p>
+              "I keep doing what I can't do yet in order to learn to be able to do it."
+            </p>
             <i>
-              Do not let what you cannot do interfere with what you can do.
+              - Vincent Van <span>Gogh</span>, artist
             </i>
-        </h5>
-        <p>
-          - John Wooden
-        </p>
-      </div>
-      <div class="hero-button">
-        <h5>Explore</h5>
-        <button mat-flat-button (click)="scrollTo(blog)">
-          <mat-icon>expand_more</mat-icon>
-        </button>
+            <div class="hero-buttons">
+              <div class="buttons">
+                <button class="explore-btn" mat-raised-button color="primary">Explore</button>
+                <a target="_blank" href="https://www.youtube.com/channel/UCS7eZBsjkUDXWbYGyAS7OgA/videos" class="watchvid-btn" mat-stroked-button color="primary">Watch Videos</a>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
+    <div class="hero-banner-tail"></div>
+  </div>
     <!-- Main Container-->
     <div #blog class="blogs-container">
       <div class="content"

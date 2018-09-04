@@ -1,1 +1,76 @@
+@import "../../../styles/blog-theme.scss";
 
+.hero-banner {
+  .hero-background {
+    background: $theme-bg-color;
+    height: 400px;
+    width: 100%;
+    .hero-message {
+      height: 100%;
+      position: relative;
+      .hero-quote {
+        transform: translateY(-45%);
+        text-align: center;
+        position: absolute;
+        top: 45%;
+        width: 100%;
+        h3 {
+          font-size: 500%;
+          color: $white;
+          font-weight: 900;
+        }
+        h4 {
+          margin-left: 30px;
+          font-size: 200%;
+          margin-top: 40px;
+          font-weight: 200;
+          letter-spacing: 5px;
+        }
+        p {
+          font-size: 20px;
+          color: $white;
+          font-weight: 300;
+        }
+        i {
+          color: $white;
+          font-weight: 100;
+          letter-spacing: 2px;
+          span {
+            font-weight: 1000;
+          }
+        }
+      }
+      //
+      .hero-buttons {
+        margin-top: 15px;
+        .buttons {
+          button {
+            margin: 10px;
+          }
+          .explore-btn {
+            width: 142px;
+            height: 61px;
+            background: $theme-bg-color;
+            font-weight: 300 !important;
+            letter-spacing: 0.3em;
+            font-weight: 400;
+          }
+          .watchvid-btn {
+            color: $white;
+            letter-spacing: 0.2rem;
+            font-weight: 300 !important;
+            height: 60px;
+            width: 150px;
+            line-height: 4;
+          }
+        }
+      }
+    }
+  }
+  .hero-banner-tail {
+    height: 30px;
+    width: 100%;
+    background: $theme-red;
+    border-bottom-left-radius: 150%;
+  }
+}
