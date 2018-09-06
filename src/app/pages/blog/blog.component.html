@@ -15,7 +15,7 @@
             <div class="hero-buttons">
               <div class="buttons">
                 <button class="explore-btn" mat-raised-button color="primary">Explore</button>
-                <a target="_blank" href="https://www.youtube.com/channel/UCS7eZBsjkUDXWbYGyAS7OgA/videos" class="watchvid-btn" mat-stroked-button color="primary">Watch Videos</a>
+                <a target="_blank" href="{{ YOUTUBE_LINK }}" class="watchvid-btn" mat-stroked-button color="primary">Watch Videos</a>
               </div>
             </div>
           </div>
@@ -23,96 +23,5 @@
     </div>
     <div class="hero-banner-tail"></div>
   </div>
-    <!-- Main Container-->
-    <div #blog class="blogs-container">
-      <div class="content"
-          fxLayout="row"
-          fxLayout.xs="column"
-          fxFlexFill>
-        <!-- Blog Section -->
-        <div class="blog-section" fxFlex="60" fxFlex.xs="100">
-          <mat-grid-list  class="m-0 m-10"
-                          [cols]="breakpoint"
-                          (window:resize)="onGridResize($event)"
-                          rowHeight="500px"
-                          gutterSize="10px">
-            <!-- Message Handlers -->
-            <!-- <app-message-handler></app-message-handler> -->
-            <!-- Blog Loader -->
-            <div *ngIf="!blogs else showBlogs" class="loader">
-              <mat-spinner></mat-spinner>
-              <span>Getting ready...</span>
-            </div>
-            <!-- Show Blog -->
-            <ng-template #showBlogs>
-              <mat-grid-tile *ngFor="let blog of blogs">
-                <mat-card class="blog-card">
-                  <img mat-card-image src="{{ blog.featured_photo }}" alt="{{ blog.title }}">
-                  <mat-card-content>
-                    <p text-center>
-                      {{ blog.summary }}
-                    </p>
-                  </mat-card-content>
-                  <mat-card-actions id="blog">
-                    <button id="read-more-btn"
-                            mat-raised-button
-                            color="primary"
-                            [routerLink]="['/blog', blog._id]">Read More</button>
-                  </mat-card-actions>
-                </mat-card>
-              </mat-grid-tile>
-            </ng-template>
-          </mat-grid-list>
-        </div>
-        <!-- Archive Section -->
-        <div class="archive-section m-t-3" fxFlex="30" fxFlex.xs="100">
-          <div fxLayout="row">
-            <mat-card class="profile-card" fxLayout="column" fxFlex="100" fxFlex.xs="100">
-              <mat-card-header>
-                <div mat-card-avatar class="profile-card-header-image"></div>
-                <mat-card-title>potato coder</mat-card-title>
-                <mat-card-subtitle>Youtube Channel</mat-card-subtitle>
-              </mat-card-header>
-              <img mat-card-image src="/assets/imgs/youtube-banner.png" alt="Youtube">
-              <mat-card-actions>
-                <button class="subscribe-btn" color="warn" mat-raised-button (click)="onSubscribe()">
-                  <mat-icon>subscriptions</mat-icon>
-                  Subscribe
-                </button>
-              </mat-card-actions>
-            </mat-card>
-          </div>
-          <div fxLayout="row">
-            <mat-card class="archive-card" fxLayout="row" fxLayout="column" fxFlex="100" fxFlex.xs="100">
-             <mat-card-title>Archives</mat-card-title>
-              <!-- Expansion Panel -->
-              <mat-accordion class="m-t-5">
-                <div *ngIf="!archives else showArchives">
-                  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-                </div>
-                <ng-template #showArchives>
-                  <mat-expansion-panel class="archive-expansion" [expanded]=true hideToggle *ngFor="let archive of archives">
-                    <mat-expansion-panel-header>
-                      <mat-panel-title>
-                        <!-- Blog Dates -->
-                        <h5 class="expansion-date-title">
-                          <span class="font-24">{{ archive._id }}</span>
-                          <mat-icon class="expansion-date-icon">date_range</mat-icon>
-                        </h5>
-                      </mat-panel-title>
-                    </mat-expansion-panel-header>
-                    <!-- Blog Titles -->
-                    <mat-list role="list" *ngFor="let blog of archive.blogs">
-                      <mat-list-item [routerLink]="['/blog', blog._id]">
-                        <a class="font-14">{{ blog.title }}</a>
-                      </mat-list-item>
-                    </mat-list>
-                  </mat-expansion-panel>
-                </ng-template>
-              </mat-accordion>
-            </mat-card>
-          </div>
-        </div>
-    </div>
-  </div>
+  <app-blog-list></app-blog-list>
 </div>

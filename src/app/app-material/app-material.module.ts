@@ -13,7 +13,7 @@ import {
   MatProgressSpinnerModule,
   MatProgressBarModule,
   MatSidenavModule,
-  MatTooltipModule
+  MatTooltipModule,
 } from '@angular/material';
 
 @NgModule({

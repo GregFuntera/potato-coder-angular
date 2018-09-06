@@ -20,6 +20,7 @@ import { MessageService } from './services/message/message.service';
 import { MessageHandlerComponent } from './components/message-handler/message-handler.component';
 // Pipes
 import { InnerHtmlPipe } from './pipes/inner-html/inner-html.pipe';
+import { BlogListComponent } from './pages/blog-list/blog-list.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { InnerHtmlPipe } from './pipes/inner-html/inner-html.pipe';
     ImagePopupComponent,
     MessageHandlerComponent,
     InnerHtmlPipe,
+    BlogListComponent,
   ],
   imports: [
     BrowserModule,

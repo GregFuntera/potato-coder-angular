@@ -1,0 +1,44 @@
+<div class="container">
+  <mat-list>
+      <mat-divider></mat-divider>
+      <div class="blogs-container mat-typography" *ngFor="let blog of blogs">
+        <div class="blog-content"
+                      fxLayout="row"
+                      fxLayout.xs="column"
+                      fxLayoutGap="5px">
+          <div class="image-container" fxFlex="35" fxFlex.xs="100">
+              <img src="{{ blog.featured_photo }}"/>
+          </div>
+          <div class="description-container" fxFlex="65" fxFlex.xs="100">
+            <h4 class="blog-summary">{{ blog.summary }}</h4>
+            <div class="youtube-icons">
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line>
+                    <button mat-icon-button matTooltip="Views">
+                        <mat-icon>visibility</mat-icon>
+                    </button>
+                    1000
+                  </div>
+                </mat-list-item>
+                <mat-list-item>
+                  <div mat-line>
+                    <button mat-icon-button matTooltip="Likes">
+                        <mat-icon>thumb_up</mat-icon>
+                    </button>
+                    1000
+                  </div>
+                </mat-list-item>
+              </mat-list>
+            </div>
+            <div class="action-btns">
+              <button mat-raised-button>
+                Read more
+              </button>
+            </div>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
+  </mat-list>
+</div>

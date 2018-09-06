@@ -9,6 +9,8 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 export class AppComponent {
 
   mobileQuery: MediaQueryList;
+  YOUTUBE_LINK = 'https://www.youtube.com/channel/UCS7eZBsjkUDXWbYGyAS7OgA/videos';
+
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {

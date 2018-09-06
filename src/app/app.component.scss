@@ -70,3 +70,12 @@ mat-icon {
 
 
 
+@media only screen and (max-width: 320px) {
+  .subscribe-youtube {
+    a {
+      font-size: 10px;
+    }
+  }
+}
+
+
