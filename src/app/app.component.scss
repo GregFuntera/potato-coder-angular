@@ -1,6 +1,6 @@
 @import "../styles/blog-theme.scss";
 
-.container {
+.app-container {
   margin-top: 80px;
   margin-bottom: 0px;
 }
@@ -66,6 +66,9 @@ mat-icon {
   /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
      causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
   flex: 1;
+  mat-sidenav {
+    width: 350px;
+  }
 }
 
 

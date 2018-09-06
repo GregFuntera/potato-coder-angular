@@ -1,0 +1,49 @@
+@import "../../../styles/blog-theme.scss";
+$base-width: 290px;
+
+.archives-container {
+  margin: 50px;
+  h1 {
+    font-size: 300%;
+    letter-spacing: 3px;
+    font-weight: 100;
+  }
+  mat-divider {
+    width: $base-width;
+  }
+  mat-accordion {
+    mat-expansion-panel {
+      margin-top: 10px;
+      background: $theme-red;
+      width: $base-width;
+    }
+    .mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+      background: $theme-red;
+    }
+
+    ::ng-deep .mat-expansion-indicator:after {
+      color: white;
+    }
+
+    mat-panel-title {
+      h4 {
+        color: $white;
+        font-size: 24px;
+        margin-top: 10px;
+      }
+    }
+    mat-list {
+      margin-bottom: 10px;
+      mat-list-item {
+        margin-top: 10px;
+        color: $white;
+        border-top: 0.5px solid $white;
+        background: $theme-bg-color;
+        a {
+          font-weight: 300;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}

@@ -21,6 +21,7 @@ import { MessageHandlerComponent } from './components/message-handler/message-ha
 // Pipes
 import { InnerHtmlPipe } from './pipes/inner-html/inner-html.pipe';
 import { BlogListComponent } from './pages/blog-list/blog-list.component';
+import { ArchivesComponent } from './pages/archives/archives.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { BlogListComponent } from './pages/blog-list/blog-list.component';
     MessageHandlerComponent,
     InnerHtmlPipe,
     BlogListComponent,
+    ArchivesComponent,
   ],
   imports: [
     BrowserModule,

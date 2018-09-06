@@ -1,0 +1,19 @@
+<div class="archives-container mat-typography">
+  <h1>Archives</h1>
+  <mat-divider></mat-divider>
+
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let archive of archives" [expanded]="true">
+      <mat-expansion-panel-header class="accord-header">
+        <mat-panel-title>
+            <h4>{{ archive._id }}</h4>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item *ngFor="let blog of archive.blogs">
+            <a href="/blog/{{ blog._id }}">{{ blog.title }}</a>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+  </mat-accordion>
+</div>
