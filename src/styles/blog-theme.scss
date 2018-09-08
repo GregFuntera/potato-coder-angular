@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 
-//  Colors
+// --- Colors ----
 // White
 $white: #fff;
 // Blue
@@ -9,10 +9,42 @@ $theme-blue: #3F5EFB;
 $theme-red: #e0217d;
 // Gradient Color
 $theme-bg-color: linear-gradient(to right, #fc466b, #3f5efb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
-
-// Icon Sizes
+// --- Icon Sizes ---
 @mixin icon-size($size) {
   font-size: $size;
   height: $size;
   width: $size;
+}
+// --- Fluid Typography ---
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+// --- iframe ---
+@mixin iframe-size($width) {
+  width: $width;
+  @media screen and (min-width: 320px) {
+    height: 200px;
+  }
+  @media screen and (min-width: 450px) {
+    height: 450px;
+  }
 }

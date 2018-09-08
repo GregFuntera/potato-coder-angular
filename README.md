@@ -5,13 +5,25 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [RELEASED] 
+## [2.0.3] - 2018-09-08 
+### Changed 
+- Changed blog view design
+### Removed 
+- Removed image-popup component 
+### Added 
+- Added Page loaders
+
 ## [2.0.2] - 2018-09-06
 ### Changed 
 - Changed blog-list design 
 - Changed Archives design
 
 ### Fixed 
-- Fixed footer button responsive font-size
+- Fixed footer button responsive font-size 
+- Fixed items in archives to be responsive content
+
+### Added 
+- Added archive component
 
 ## [2.0.1] - 2018-09-04
 ### Changed 

@@ -13,4 +13,10 @@ export class BlogComponent implements OnInit {
 
   ngOnInit() {}
 
+  scrollToView() {
+    document.querySelector('.blog-list').scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
+
 }

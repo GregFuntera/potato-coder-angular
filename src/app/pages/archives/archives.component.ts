@@ -22,7 +22,7 @@ export class ArchivesComponent implements OnInit {
     this.blogSvc.getBlogArchives().subscribe(
       data => {
         this.archives = data;
-        console.log(this.archives);
+        // console.log(this.archives);
     });
   }
 }

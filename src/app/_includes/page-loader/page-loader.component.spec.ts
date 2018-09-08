@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImagePopupComponent } from './image-popup.component';
+import { PageLoaderComponent } from './page-loader.component';
 
-describe('ImagePopupComponent', () => {
-  let component: ImagePopupComponent;
-  let fixture: ComponentFixture<ImagePopupComponent>;
+describe('PageLoaderComponent', () => {
+  let component: PageLoaderComponent;
+  let fixture: ComponentFixture<PageLoaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ImagePopupComponent ]
+      declarations: [ PageLoaderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ImagePopupComponent);
+    fixture = TestBed.createComponent(PageLoaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

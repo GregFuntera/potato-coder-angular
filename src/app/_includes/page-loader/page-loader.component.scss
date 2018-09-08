@@ -1,0 +1,12 @@
+.loader-container {
+  text-align: center;
+  h1 {
+    font-size: 150%;
+  }
+  mat-spinner {
+    margin: auto;
+  }
+  .mat-spinner::ng-deep circle {
+    stroke: #e0217d;
+  }
+}

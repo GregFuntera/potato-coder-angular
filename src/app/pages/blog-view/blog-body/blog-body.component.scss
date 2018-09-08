@@ -1,0 +1,40 @@
+@import "../../../../styles/blog-theme.scss";
+
+.blog-container {
+  max-width: 800px;
+  min-width: 320px;
+  margin: auto;
+  .content {
+    margin: 15px;
+    p {
+      img {
+        width: 85%;
+        height: 100%;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+      }
+      a {
+        overflow-wrap: break-word;
+      }
+      iframe {
+        @include iframe-size(100%);
+      }
+    }
+    pre {
+      overflow: auto;
+      font-size: 14px;
+      border: 1px solid #ebebeb;
+      border-radius: 5px;
+      padding: 14px;
+      line-height: 24px;
+      background: #e2e5f9;
+   }
+  }
+  .comments {
+    #disqus_thread {
+      margin: 15px;
+    }
+  }
+}
+
+
+

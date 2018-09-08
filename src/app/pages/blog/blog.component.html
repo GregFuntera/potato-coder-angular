@@ -14,7 +14,7 @@
             </i>
             <div class="hero-buttons">
               <div class="buttons">
-                <button class="explore-btn" mat-raised-button color="primary">Explore</button>
+                <button class="explore-btn" mat-raised-button color="primary" (click)="scrollToView()">Explore</button>
                 <a target="_blank" href="{{ YOUTUBE_LINK }}" class="watchvid-btn" mat-stroked-button color="primary">Watch Videos</a>
               </div>
             </div>
@@ -23,5 +23,5 @@
     </div>
     <div class="hero-banner-tail"></div>
   </div>
-  <app-blog-list></app-blog-list>
+  <app-blog-list class="blog-list"></app-blog-list>
 </div>
