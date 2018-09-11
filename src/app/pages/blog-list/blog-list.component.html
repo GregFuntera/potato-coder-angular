@@ -15,18 +15,18 @@
               <mat-list>
                 <mat-list-item>
                   <div mat-line>
-                    <button mat-icon-button matTooltip="Views">
-                        <mat-icon color="primary">visibility</mat-icon>
+                    <button mat-icon-button matTooltip="YouTube Views">
+                        <mat-icon color="accent">visibility</mat-icon>
                     </button>
-                    1000
+                    {{ blog.youtube_stats.viewCount || 0}}
                   </div>
                 </mat-list-item>
                 <mat-list-item>
                   <div mat-line>
-                    <button mat-icon-button matTooltip="Likes">
-                        <mat-icon color="accent">favorite</mat-icon>
+                    <button mat-icon-button matTooltip="YouTube Likes">
+                        <mat-icon color="primary">thumb_up</mat-icon>
                     </button>
-                    1000
+                    {{ blog.youtube_stats.likeCount || 0 }}
                   </div>
                 </mat-list-item>
               </mat-list>

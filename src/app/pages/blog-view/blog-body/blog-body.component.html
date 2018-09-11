@@ -1,5 +1,5 @@
 <div class="blog-container">
   <div class="content mat-typography" [innerHTML]="body | innerHtml"></div>
-  <disqus class="comments" [identifier]="IDENTIFIER"></disqus>
+  <disqus *ngIf="body" class="comments" [identifier]="IDENTIFIER"></disqus>
 </div>
 
