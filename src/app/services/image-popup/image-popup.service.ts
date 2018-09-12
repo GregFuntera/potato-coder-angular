@@ -7,6 +7,9 @@ import { Image } from '../../models/image.model';
 })
 
 export class ImagePopupService {
+   /**TODO
+    * ENHANCE IMAGE FOR MOBILE DEVICES
+    */
   private dataSource = new BehaviorSubject<Image>(new Image());
   currentData = this.dataSource.asObservable();
 

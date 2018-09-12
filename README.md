@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed 
 - Removed console logs in blog view 
 ### Added 
-- Added --aot command in deploy
+- Added --aot command in deploy 
+### Added
+- Some TODOs list in blog-service, image-popup-service, youtube-api-service
 
 ## [2.0.4] - 2018-09-11
 ### Added 

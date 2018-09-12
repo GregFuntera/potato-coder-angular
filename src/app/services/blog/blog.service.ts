@@ -9,8 +9,13 @@ import { MessageService } from './../message/message.service';
   providedIn: 'root'
 })
 export class BlogService {
+  /** TODO
+   * ENHANCE ERROR HANDLERS FOR:
+   *  1. BLOG LIST
+   *  2. BLOG VIEW
+   *  3. BLOG ARCHIVE
+  */
   API = environment.api;
-
   constructor(
     private http: HttpClient,
     private messageSvc: MessageService,
@@ -19,7 +24,6 @@ export class BlogService {
   getBlogs(): Observable<any> {
     return this.http.get(this.API + '/blog')
     .pipe(
-      // tap(blogs => console.log('Fetched Blog Data')),
       catchError(this.handleError('getBlogs', []))
     );
   }
@@ -27,7 +31,6 @@ export class BlogService {
   getBlogArchives(): Observable<any> {
     return this.http.get(this.API + '/archives')
       .pipe(
-        // tap(archives => console.log('Fetched Archives Data')),
         catchError(this.handleError('getBlogArchives', []))
       );
   }
@@ -35,7 +38,6 @@ export class BlogService {
   getBlog(id: string): Observable<any> {
     return this.http.get(this.API + '/blog/' + id)
       .pipe(
-        // tap(blog => console.log('fetched: ', blog)),
         catchError(this.handleError('getBlog', []))
       );
   }

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class YoutubeApiService {
+
   YOTUBE_VIDEO_API = 'https://www.googleapis.com/youtube/v3/videos?part=statistics';
   API_KEY = 'AIzaSyBOlzQFDSuTmTpHlQeyzKPQaBrSyK4CFgQ';
 
