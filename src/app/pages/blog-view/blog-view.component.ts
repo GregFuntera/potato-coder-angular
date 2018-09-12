@@ -41,7 +41,7 @@ export class BlogViewComponent implements OnInit {
     this.blogSvc.getBlog(blogID).subscribe(
       res => {
         this.blog$ = res;
-        console.log('Blog article: ', this.blog$);
+        // console.log('Blog article: ', this.blog$);
       });
   }
 }
